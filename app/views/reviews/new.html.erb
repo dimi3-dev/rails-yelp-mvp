@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <h3>Add a review for <%= @restaurant.name %></h3>
+
+  <%# This special array syntax is for nested routes! %>
+  <%= simple_form_for([@restaurant, @review]) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.submit "Submit Review", class: "btn btn-primary" %>
+  <% end %>
+</div>
